@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Design tokens lấy từ Figma EduPress UI Kit */
+@theme {
+  --color-brand: #ff7a2f;
+  --color-brand-dark: #e5651a;
+  --color-brand-soft: #fff1e8;
+  --color-ink: #000000;
+  --color-muted: #6b6b6b;
+  --color-line: #ececec;
+  --color-surface: #f5f5f5;
+  --color-sale: #e5484d;
+  --color-free: #4caf50;
+
+  --font-display: "Exo 2", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 0.75rem;
+  --shadow-lift: 0 10px 30px -10px rgb(0 0 0 / 0.18);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; }
+}
